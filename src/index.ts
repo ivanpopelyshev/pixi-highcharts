@@ -1,4 +1,2 @@
-export * from './Chart';
-export * from './core';
-export * from './drawers';
-
+export class TestClass {
+}

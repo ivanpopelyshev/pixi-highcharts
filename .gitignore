@@ -30,3 +30,7 @@ node_modules
 compile
 
 *.lock
+
+# binaries
+dist
+lib
