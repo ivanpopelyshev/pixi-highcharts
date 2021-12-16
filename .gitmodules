@@ -1,0 +1,6 @@
+[submodule "pixi-candles"]
+    path = pixi-candles
+	url = https://github.com/gameofbombs/pixi-candles
+[submodule "pixi-graphics-smooth"]
+    path = pixi-graphics-smooth
+	url = https://github.com/pixijs/graphics-smooth
