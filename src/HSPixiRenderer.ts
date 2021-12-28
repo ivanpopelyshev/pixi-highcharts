@@ -1,3 +1,9 @@
+import * as PIXI from 'pixi.js-legacy';
+
+import {
+    AnimationOptionsObject,
+
+} from 'highcharts';
 const {
     isFirefox,
     win
@@ -23,15 +29,14 @@ const {
 
 import type HTMLElement from 'highcharts';
 // import SVGElement3DLike from "../SVG/SVGElement3DLike";
-import {SVGCuboid, SVGArc3D} from 'highcharts-3d';
 import PatternFill from 'highcharts';
 
-export class HSPixiRenderer implements SVGRendererLike {
+export class HSPixiRenderer {
     public constructor(
-        container: HTMLDOMElement,
+        container: any,
         width: number,
         height: number,
-        style?: CSSObject,
+        style?: any,
         forExport?: boolean,
         allowHTML?: boolean,
         styledMode?: boolean
@@ -75,10 +80,10 @@ export class HSPixiRenderer implements SVGRendererLike {
     }
 
     public init(
-        container: HTMLDOMElement,
+        container: any,
         width: number,
         height: number,
-        style?: CSSObject,
+        style?: any,
         forExport?: boolean,
         allowHTML?: boolean,
         styledMode?: boolean
@@ -146,7 +151,7 @@ export class HSPixiRenderer implements SVGRendererLike {
     public setSize(
         width: number,
         height: number,
-        animate?: (boolean|Partial<AnimationOptions>)
+        animate?: (boolean|Partial<AnimationOptionsObject>)
     ): void {
         if (this.width === width &&
             this.height === height) {
@@ -187,7 +192,7 @@ export class HSPixiRenderer implements SVGRendererLike {
         return undefined as any;
     }
 
-    arc3dPath(shapeArgs: SVGAttributes): SVGArc3D {
+    arc3dPath(shapeArgs: SVGAttributes): any {
         return undefined as any;
     }
 
@@ -203,7 +208,7 @@ export class HSPixiRenderer implements SVGRendererLike {
         return undefined as any;
     }
 
-    cuboidPath(shapeArgs: SVGAttributes): SVGCuboid {
+    cuboidPath(shapeArgs: SVGAttributes): any {
         return undefined as any;
     }
 
@@ -227,7 +232,7 @@ export class HSPixiRenderer implements SVGRendererLike {
         return undefined as any;
     }
 
-    funnel3dPath(shapeArgs: SVGAttributes): Highcharts.Funnel3dPathsObject {
+    funnel3dPath(shapeArgs: SVGAttributes): any {
         return undefined as any;
     }
 
@@ -247,7 +252,7 @@ export class HSPixiRenderer implements SVGRendererLike {
         return undefined as any;
     }
 
-    getSpanWidth(wrapper: SVGElement, tspan: HTMLDOMElement): number {
+    getSpanWidth(wrapper: SVGElement, tspan: any): number {
         return 0;
     }
 
@@ -255,10 +260,10 @@ export class HSPixiRenderer implements SVGRendererLike {
         return undefined as any;
     }
 
-    invertChild(element: HTMLDOMElement, parentNode: HTMLDOMElement): void {
+    invertChild(element: any, parentNode: any): void {
     }
 
-    measureSpanWidth(text: string, style: CSSObject): number {
+    measureSpanWidth(text: string, style: any): number {
         return 0;
     }
 
@@ -275,4 +280,4 @@ export class HSPixiRenderer implements SVGRendererLike {
     }
 }
 
-(WebGLRenderer as any).prototype.symbols = Symbols;
+(HSPixiRenderer as any).prototype.symbols = Symbols;
